@@ -1,0 +1,23 @@
+gRPC:
+  server-port: 50051
+  pingTimeSec: 10
+  timeoutSec: 10
+channels:
+  size: 2048
+client:
+  windowCount: 10
+  minWindowLengthSec: 10
+db:
+  connection:
+    serverUrl: "http://localhost:8086"
+    org: "UBB"
+    bucket: "LICENTA"
+    token: "WdLt4fRinuhD1FWbIEB4evo9LWJAjEFmf46y_YvDHtBqgIcVtwSOVfMe_qe1IK2JxfUOzsKRSHCYG7M_kVCHtA=="
+  query:
+    batchSize: 20000
+    timeoutSec: 10
+wss:
+  readBufferSize: 1024
+  writeBufferSize: 1024
+  port: 8080
+logFile: "proxy.log"

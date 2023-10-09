@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+option go_package = "./external-api/gRPC/proto";
+
+package gRPC;
+
+message PacketMetadata {
+  string timestamp = 1;
+  int32 size = 2;
+  string senderIp = 3;
+  string receiverIp = 4;
+  string protocol = 5;
+}
+
+message PacketMetadataList {
+  repeated PacketMetadata metadata = 1;
+}
+
+message BPFFilters {
+  string filters = 1;
+}
+
+message Empty {
+
+}
+
+message ID {
+  string ip = 1;
+}
+
+service PacketCapture {
+  rpc SendPacketMetadataList(PacketMetadataList) returns (Empty);
+  rpc SetBPFFilters(ID) returns (stream BPFFilters);
+}

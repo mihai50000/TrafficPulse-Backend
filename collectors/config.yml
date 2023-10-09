@@ -1,0 +1,12 @@
+channelsSize: 2048
+logFile: "collectors.log"
+allowedDevices:
+  - "lo0"
+  - "en0"
+  - "*"
+sniffer:
+  BPFFiltersPath: "collectors/bpf-filters.txt"
+processor:
+  dataSendingWindowLengthSec: 5
+gRPC:
+  serverAddress: "localhost:50051"
